@@ -1,11 +1,12 @@
 using Truant.History;
 using Truant.Rules;
 using Truant.Strategies;
+using Truant.Strategy;
 using Truant.Utils;
 
 namespace Truant.Core;
 
-public class SemesterSimulator(IRandomProvider random, IStudentStrategy strategy)
+public class SemesterSimulator(IRandomProvider random, ISkipStrategy strategy)
 {
     public SimulationResult Run()
     {
@@ -21,14 +22,7 @@ public class SemesterSimulator(IRandomProvider random, IStudentStrategy strategy
             var dayOutcomes = new SubjectOutcome[6];
             
             var yesterday = history.GetDayOutcomes(day - 1);
-            /*Console.Write($"Yesterday: ");
-            for (int i = 0; i < 6; i++)
-            {
-                Console.Write(yesterday[i].WasAsked + " ");
-            }
-            Console.WriteLine();
-            Console.WriteLine($"Decisions: {string.Join(" ",decisions)}");
-*/
+
             for (int i = 0; i < 6; i++)
             {
                 var attended = decisions[i];
@@ -47,12 +41,13 @@ public class SemesterSimulator(IRandomProvider random, IStudentStrategy strategy
             }
 
             history.RecordDay(dayOutcomes);
-            strategy.OnDayCompleted(day, history);
         }
 
         return new SimulationResult(score, false, 0, totalSkips);
     }
 
+    
+    
     private List<Professor> GenerateProfessors()
     {
         var professors = new List<Professor>();
@@ -68,10 +63,8 @@ public class SemesterSimulator(IRandomProvider random, IStudentStrategy strategy
                 3 => new XorDependencyRule(random),
                 _ => throw new InvalidOperationException()
             };
-            //Console.WriteLine($"Subject: {subject}, Rule: {rule}");
             professors.Add(new Professor(subject, rule));
         }
-        //Console.WriteLine();
         return professors;
     }
 }

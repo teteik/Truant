@@ -1,6 +1,6 @@
 namespace Truant.History;
 
-public class SemesterHistory : ISemesterHistory
+public class SemesterHistory : IReadOnlyStudentHistory
 {
     private readonly List<SubjectOutcome[]> _history = new();
     public int CurrentDay => _history.Count;
@@ -23,7 +23,7 @@ public class SemesterHistory : ISemesterHistory
         return _history[day][(int) subject].Attended;
     }
 
-    public bool WasAsked(int day, Subject subject)
+    public bool? WasAsked(int day, Subject subject)
     {
         if (day < 0 || day >= _history.Count)
             throw new InvalidOperationException($"No day outcome found for day {day}");

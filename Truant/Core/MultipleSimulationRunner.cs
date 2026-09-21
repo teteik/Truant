@@ -1,9 +1,10 @@
 using Truant.Strategies;
+using Truant.Strategy;
 using Truant.Utils;
 
 namespace Truant.Core;
 
-public class MultipleSimulationRunner(IStudentStrategy strategy)
+public class MultipleSimulationRunner(ISkipStrategy strategy)
 {
     public void Run(int iterations = 10000)
     {
@@ -14,7 +15,6 @@ public class MultipleSimulationRunner(IStudentStrategy strategy)
 
         for (int i = 0; i < iterations; i++)
         {
-            strategy.Reset(); 
             var simulator = new SemesterSimulator(new DefaultRandomProvider(), strategy);
             var result = simulator.Run();
 
