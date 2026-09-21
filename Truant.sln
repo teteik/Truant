@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Truant", "Truant\Truant.csproj", "{0BAFFB6E-70B4-4BB4-9B07-29C1EE762385}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Truant.Strategy", "Truant.Strategy\Truant.Strategy.csproj", "{C709DF80-1181-4651-AA71-02311D3B808D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{0BAFFB6E-70B4-4BB4-9B07-29C1EE762385}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BAFFB6E-70B4-4BB4-9B07-29C1EE762385}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BAFFB6E-70B4-4BB4-9B07-29C1EE762385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C709DF80-1181-4651-AA71-02311D3B808D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C709DF80-1181-4651-AA71-02311D3B808D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C709DF80-1181-4651-AA71-02311D3B808D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C709DF80-1181-4651-AA71-02311D3B808D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
