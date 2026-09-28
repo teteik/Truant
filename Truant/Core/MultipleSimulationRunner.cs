@@ -18,11 +18,11 @@ public class MultipleSimulationRunner(ISkipStrategy strategy)
             var simulator = new SemesterSimulator(new DefaultRandomProvider(), strategy);
             var result = simulator.Run();
 
-            totalScore += result.FinalScore;
-            if (result.IsExpelled) loseCount++;
+            totalScore += result.TotalPleasure;
+            if (result.Outcome == DayOutcome.Expelled) loseCount++;
             
-            if (result.FinalScore > maxScore) maxScore = result.FinalScore;
-            if (result.FinalScore < minScore) minScore = result.FinalScore;
+            if (result.TotalPleasure > maxScore) maxScore = result.TotalPleasure;
+            if (result.TotalPleasure < minScore) minScore = result.TotalPleasure;
         }
 
         Console.WriteLine($"Strategy: {strategy.Name}");

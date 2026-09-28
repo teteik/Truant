@@ -1,13 +1,25 @@
-﻿using Truant.Core;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Truant.Core;
 using Truant.Strategies;
+using Truant.Strategy;
+using Truant.Utils;
 
-var strategy = new FirstSkipStrategy();
-//var strategy = new LectorsStrtegy();
-var runner = new MultipleSimulationRunner(strategy);
-//var askingCounter = new AskingCounter(new DefaultRandomProvider());
+var builder = Host.CreateDefaultBuilder();
+builder.ConfigureServices((hostContext, services) =>
+{
+   services.AddSingleton<IRandomProvider, DefaultRandomProvider>();
+   services.AddSingleton<ISkipStrategy, FirstSkipStrategy>();
+   services.AddSingleton<SemesterSimulator>();
+   services.AddHostedService<SemesterWorker>();
+});
 
-//askingCounter.RunProfessorsSimulation();
+var host = builder.Build();
 
-//Console.WriteLine();
+Console.CancelKeyPress += (sender, eventArgs) =>
+{
+   eventArgs.Cancel = true;
+   Console.WriteLine("Получен сигнал прерывания. Завершение работы.");
+};
 
-runner.Run(); 
+await host.RunAsync();

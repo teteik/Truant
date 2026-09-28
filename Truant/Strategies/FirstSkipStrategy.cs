@@ -5,7 +5,7 @@ namespace Truant.Strategies;
 
 public class FirstSkipStrategy : ISkipStrategy
 {
-    public string Name => "Artemev Contest Skip Strategy";
+    public string Name => "First Skip Strategy";
     
     private readonly int[,,] _combinations = new int[6, 6, 6];
     
