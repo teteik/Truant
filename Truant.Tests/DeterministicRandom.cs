@@ -6,6 +6,9 @@ public class DeterministicRandom(params int[] sequence) : IRandomProvider
 {
     private int _index;
 
+    public int Seed { get; private set; }
+    public int CallCount => _index;
+    
     public int Next(int min, int max)
     {
         if (_index >= sequence.Length)
@@ -15,5 +18,11 @@ public class DeterministicRandom(params int[] sequence) : IRandomProvider
             throw new ArgumentOutOfRangeException(nameof(result), $"Значение {result} вне диапазона [{min}, {max})");
         
         return result;
+    }
+
+    public void RestoreState(int seed, int callCount)
+    {
+        Seed = seed;
+        _index = callCount;
     }
 }
