@@ -13,8 +13,8 @@ public class SemesterSimulator
     private readonly SemesterHistory _history;
     private readonly List<Professor> _professors;
 
-    public int CurrentDay { get; private set; } = 1;
-    public int TotalPleasure { get; private set; } = 0;
+    private int CurrentDay { get; set; } = 1;
+    private int TotalPleasure { get; set; } = 0;
 
     public SemesterSimulator(IRandomProvider random, ISkipStrategy strategy)
     {
