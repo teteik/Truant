@@ -1,4 +1,4 @@
-namespace Truant.Utils;
+namespace Truant.Shared.Utils;
 
 public class DefaultRandomProvider() : IRandomProvider
 {

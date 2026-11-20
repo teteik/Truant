@@ -1,4 +1,4 @@
-using Truant.Models;
+using Truant.Shared.Models;
 
 namespace Truant.Rules;
 

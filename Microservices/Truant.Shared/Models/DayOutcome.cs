@@ -1,4 +1,4 @@
-namespace Truant.Models;
+namespace Truant.Shared.Models;
 
 public enum DayOutcome
 {

@@ -1,5 +1,5 @@
 using Truant.Entities;
-using Truant.Models;
+using Truant.Shared.Models;
 
 namespace Truant.History;
 

@@ -1,4 +1,4 @@
-using Truant.Utils;
+using Truant.Shared.Utils;
 
 namespace Truant.Tests;
 

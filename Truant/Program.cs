@@ -4,9 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Truant;
 using Truant.Core;
+using Truant.Shared.Utils;
 using Truant.Strategies;
-using Truant.Strategy;
-using Truant.Utils;
 
 var builder = Host.CreateDefaultBuilder(args);
 builder.ConfigureServices((hostContext, services) =>

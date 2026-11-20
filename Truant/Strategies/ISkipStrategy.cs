@@ -1,6 +1,6 @@
 using Truant.History;
 
-namespace Truant.Strategy;
+namespace Truant.Strategies;
 
 public interface ISkipStrategy
 {

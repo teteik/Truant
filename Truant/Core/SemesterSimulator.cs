@@ -1,7 +1,7 @@
 using Truant.History;
-using Truant.Models;
-using Truant.Strategy;
-using Truant.Utils;
+using Truant.Shared.Models;
+using Truant.Shared.Utils;
+using Truant.Strategies;
 
 namespace Truant.Core;
 

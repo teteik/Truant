@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Truant.Entities;
 using Truant.History;
-using Truant.Models;
 using Truant.Rules;
-using Truant.Utils;
+using Truant.Shared.Models;
+using Truant.Shared.Utils;
 
 namespace Truant.Core;
 

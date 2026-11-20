@@ -1,5 +1,5 @@
-using Truant.Models;
 using Truant.Rules;
+using Truant.Shared.Models;
 
 namespace Truant.Tests.Rules;
 
