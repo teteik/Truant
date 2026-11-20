@@ -1,4 +1,4 @@
-namespace Truant;
+namespace Truant.Models;
 
 public enum DayOutcome
 {
@@ -7,4 +7,3 @@ public enum DayOutcome
     SemesterCompleted
 }
 
-public record DaySimulationResult (DayOutcome Outcome, int Day, int TotalPleasure);
