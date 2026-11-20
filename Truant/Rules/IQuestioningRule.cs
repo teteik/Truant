@@ -1,3 +1,5 @@
+using Truant.Models;
+
 namespace Truant.Rules;
 
 public interface IQuestioningRule

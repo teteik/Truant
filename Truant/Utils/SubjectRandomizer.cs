@@ -1,3 +1,5 @@
+using Truant.Models;
+
 namespace Truant.Utils;
 
 public static class SubjectRandomizer

@@ -16,4 +16,9 @@ public class DeterministicRandom(params int[] sequence) : IRandomProvider
         
         return result;
     }
+
+    public void Reset(int seed)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -1,6 +1,6 @@
-namespace Truant;
+namespace Truant.Models;
 
-public enum Subject : int
+public enum Subject
 {
     Calculus = 0,           
     LinearAlgebra = 1,     

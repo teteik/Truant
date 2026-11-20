@@ -1,3 +1,5 @@
+using Truant.Models;
+
 namespace Truant.Tests;
 
 public static class SubjectOutcomeHelper

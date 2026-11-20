@@ -1,4 +1,5 @@
 using Truant.History;
+using Truant.Models;
 using Truant.Strategy;
 
 namespace Truant.Strategies;

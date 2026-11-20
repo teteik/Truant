@@ -1,3 +1,5 @@
+using Truant.Models;
+
 namespace Truant.History;
 
 public interface IReadOnlyStudentHistory

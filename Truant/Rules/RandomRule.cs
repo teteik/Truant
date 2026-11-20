@@ -1,3 +1,4 @@
+using Truant.Models;
 using Truant.Utils;
 
 namespace Truant.Rules;

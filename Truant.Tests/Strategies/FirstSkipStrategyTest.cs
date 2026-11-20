@@ -1,4 +1,5 @@
 using Truant.History;
+using Truant.Models;
 using Truant.Strategies;
 
 namespace Truant.Tests.Strategies;
