@@ -1,21 +1,30 @@
+using Truant.Models;
 using Truant.Utils;
 
 namespace Truant.Rules;
 
 public class XorDependencyRule : IQuestioningRule
 {
-    private readonly Subject _dependencyA;
-    private readonly Subject _dependencyB;
+    public Subject DependencyA { get; init; }
+    public Subject DependencyB  { get; init; }
 
     public int RuleNumber { get; } = 3;
 
     public XorDependencyRule(IRandomProvider random)
     {
-        (_dependencyA, _dependencyB) = SubjectRandomizer.NextTwoDistinctSubjects(random);
+        (DependencyA, DependencyA) = SubjectRandomizer.NextTwoDistinctSubjects(random);
+    }
+
+    public XorDependencyRule(Subject dependencyA, Subject dependencyB)
+    {
+        DependencyA = dependencyA;
+        DependencyA = dependencyB;
     }
 
     public bool ShouldAsk(Subject subject, SubjectOutcome[] yesterday)
     {
-        return yesterday[(int) _dependencyA].WasAsked ^ yesterday[(int) _dependencyB].WasAsked;
+        var askedA = yesterday[(int)DependencyA].WasAsked == true;
+        var askedB = yesterday[(int)DependencyA].WasAsked == true;
+        return askedA ^ askedB;
     }
 }
